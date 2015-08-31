@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap のためのスターターテンプレート</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> 
+    <style>
+    body {
+      padding-top: 50px;
+    }
+    .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+    }
+    #navView ul:nth-child(2) li {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">プロジェクトの名前</a>
+        </div>
+        <div id="navView" class="collapse navbar-collapse">
+          <ul  class="nav navbar-nav">
+            <li><a href="/">ホーム</a></li>
+            <li><a href="/about">自己紹介</a></li>
+            <li><a href="/contact">問い合わせ</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <button type="button" class="btn btn-default navbar-btn hidden" data-toggle="modal" data-target="#editModalView">編集する</button>
+            </li>
+            <li>
+              <button class="btn btn-default navbar-btn hidden" data-toggle="modal" data-target="#deleteModalView">削除する</button>
+            </li>
+            <li>
+              <button class="btn btn-default navbar-btn hidden" data-toggle="modal" data-target="#createModalView">ページを追加する</button>
+            </li>
+            <li>
+              <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#resetModalView">初期化</button>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="starter-template">
+        <div id="pageView"></div>
+        <div id="message"></div>
+      </div>
+    </div><!-- /.container -->
+
+    <!-- Modal -->
+    <div id="editModalView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">編集しています。</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>タイトル</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>コンテンツ</label>
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">保存する</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="deleteModalView" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">記事の削除</h4>
+          </div>
+          <div class="modal-body">
+            <p>この記事を削除しますか？</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">削除する</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="createModalView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">ページの追加</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>名前</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>タイトル</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>コンテンツ</label>
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">追加する</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="resetModalView" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">初期化</h4>
+          </div>
+          <div class="modal-body">
+            <p>初期化しますか？保存したデータはすべて削除されます。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">初期化する</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+
+    <script id="pageTemplate" type="text/template">
+      <h1><%= title %></h1>
+      <div class="lead"><%= body %></div>
+    </script>
+
+    <script>
+    var PageModel = Backbone.Model.extend({
+      url: function() { return 'api/pages'; },
+      sync: function(method, model, options) {
+
+        if (method === 'update' || method === 'delete') {
+          model.url = function() { return 'api/pages/' + model.get('id'); };
+        } else {
+          model.url = function() { return 'api/pages'; }; 
+        }
+
+        return Backbone.sync(method, model, options);
+      }
+    });
+
+    var PageView = Backbone.View.extend({
+      el: '#pageView',
+      template: _.template($('#pageTemplate').html()),
+      initialize: function() {
+        this.listenTo(this.model, 'change', this.render);
+      },
+      render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+      }
+    });
+
+    var NavView = Backbone.View.extend({
+      el: '#navView',
+      events: {
+        'click ul:nth-child(1) a': 'handleClick'
+      },
+      initialize: function() {
+        this.$buttons = this.$el.find('ul:nth-child(2)');
+        this.listenTo(this.model, 'change', this.handleMode);
+      },
+      handleClick: function(evt) {
+        var href = $(evt.currentTarget).attr('href');
+
+        // http://stackoverflow.com/a/19709846/531320
+        if (0 > href.indexOf('http://') || 0 > href.indexOf('https://')) {
+          Backbone.history.navigate(href, true);
+
+          return false;
+        }
+      },
+      handleMode: function() {
+        var id = this.model.get('id');
+
+        if (id === null) {
+          this.$buttons.find("button[data-target='#editModalView']").addClass('hidden');
+          this.$buttons.find("button[data-target='#deleteModalView']").addClass('hidden');
+          this.$buttons.find("button[data-target='#createModalView']").removeClass('hidden');
+        } else {
+          this.$buttons.find("button[data-target='#editModalView']").removeClass('hidden');
+          this.$buttons.find("button[data-target='#deleteModalView']").removeClass('hidden');
+          this.$buttons.find("button[data-target='#createModalView']").addClass('hidden');
+        }
+      }
+    });
+
+    var EditModalView = Backbone.View.extend({
+      el: '#editModalView',
+      events: {
+        'shown.bs.modal': 'handleEdit',
+        'click div.modal-footer button:eq(1)': 'handleSave'
+      },
+      initialize: function() {
+        this.$title = this.$el.find('.modal-body input:eq(0)');
+        this.$body = this.$el.find('.modal-body textarea:eq(0)');
+        this.listenTo(this.model, 'change', this.render);
+      },
+      render: function() {
+        var title = this.model.get('title');
+        var body = this.model.get('body');
+        this.$title.val(title);
+        this.$body.val(body);
+      },
+      handleEdit: function() {
+        this.render();
+      },
+      handleSave: function() {
+        var page = this.model;
+        var id = page.get('id');
+        var title = this.$title.val();
+        var body = this.$body.val();
+
+        if (id === null) {
+          this.$el.modal('hide');
+          return;
+        }
+
+        if (title !== page.get('title') || body !== page.get('body')) {
+          page.save({id: id, title: title, body: body});
+        }
+      },
+    });
+
+    var ResetModalView = Backbone.View.extend({
+      el: '#resetModalView',
+      events: {
+        'click div.modal-footer button:eq(1)': 'handleReset'
+      },
+      handleReset: function() {
+
+        var that = this;
+        var name = that.model.get('name');
+
+        $.get('/api/reset').done(function() {
+        that.model
+          .unset('id', { silent: true })
+          .fetch({
+            data: {name: name},
+            error: function(model, response) {
+              that.model.set(response.responseJSON);
+            }
+          });
+        }); 
+      }
+    });
+
+    var DeleteModalView = Backbone.View.extend({
+      el: '#deleteModalView',
+      events: {
+        'click div.modal-footer button:eq(1)': 'handleDelete'
+      },
+      handleDelete: function() {
+        var that = this;
+        var name = that.model.get('name');
+        this.model.destroy();
+        this.model.fetch({
+            data: {name: name},
+            error: function(model, response) {
+              that.model.set(response.responseJSON);
+            }
+          });
+        }
+    });
+
+    var CreateModalView = Backbone.View.extend({
+      el: '#createModalView',
+      events: {
+        'shown.bs.modal': 'handleEdit',
+        'click div.modal-footer button:eq(1)': 'handleSave'
+      },
+      initialize: function() {
+        this.$name = this.$el.find('.modal-body input:eq(0)');
+        this.$title = this.$el.find('.modal-body input:eq(1)');
+        this.$body = this.$el.find('.modal-body textarea:eq(0)');
+      },
+      handleEdit: function() {
+        var name = this.model.get('name');
+
+        this.$name.val(name);
+        this.$title.val('');
+        this.$body.val('');
+      },
+      handleSave: function() {
+        var name = this.$name.val();
+        var title = this.$title.val();
+        var body = this.$body.val();
+
+        if (name === '' || title === '' || body === '') {
+            return;
+        }
+
+        var that = this;
+
+        that.model.save(
+          {
+            name: name, title: title, body: body
+          },
+          {
+            success: function() {
+              that.model.fetch({
+                data: { name: name },
+                error: function(model, response) {
+                  that.model.set(response.responseJSON);
+                }
+              });
+            }
+          }
+        );
+
+      },
+    });
+
+    var Router = Backbone.Router.extend({
+      routes: {
+        '(:name)': 'dispatch'
+      },
+      initialize: function(options) {
+        this.model = options.model;
+      },
+      dispatch: function(name) {
+        if (name === null) {
+          name = 'index';
+        }
+        var that = this;
+
+        that.model.fetch({
+          data: {name: name},
+          error: function(model, response) {
+            that.model.set(response.responseJSON);
+          }
+        });
+      }
+    });
+
+    var app = {};
+    app.model = new PageModel;
+    app.config = {
+      model: app.model
+    };
+    app.navView = new NavView(app.config);
+    app.pageView = new PageView(app.config);
+    app.editModalView = new EditModalView(app.config);
+    app.resetModalView = new ResetModalView(app.config);
+    app.deleteModalView = new DeleteModalView(app.config);
+    app.createModalView = new CreateModalView(app.config); 
+    app.router = new Router(app.config);
+    Backbone.history.start({ pushState: true, root: '/' });
+
+    $('#message').addClass('alert alert-success').html('ページがロードされました。').fadeOut(8000);
+    </script>
+  </body>
+</html>
+
